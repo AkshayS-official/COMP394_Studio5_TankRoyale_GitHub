@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class TankHealth : MonoBehaviour
+
+public class TankHealth_ : MonoBehaviour
+
 {
     public float health = 100f;
 

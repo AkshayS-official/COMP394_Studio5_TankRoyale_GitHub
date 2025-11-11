@@ -20,7 +20,8 @@ public class ExplosiveBarrel : MonoBehaviour
             if (rb != null) rb.AddExplosionForce(upwardForce, transform.position, explosionRadius);
 
             // Damage tanks
-            TankHealth th = hit.GetComponent<TankHealth>();
+
+            TankHealth_ th = hit.GetComponent<TankHealth_>();
             if (th != null)
             {
                 float dist = Vector3.Distance(transform.position, hit.transform.position);
