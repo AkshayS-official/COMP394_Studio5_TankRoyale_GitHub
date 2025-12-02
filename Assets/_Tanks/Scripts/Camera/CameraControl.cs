@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Tanks.Complete
+namespace _Tanks.Scripts.Camera
 {
     public class CameraControl : MonoBehaviour
     {
@@ -10,7 +10,7 @@ namespace Tanks.Complete
         public Transform[] m_Targets;                   // All the targets the camera needs to encompass.
 
 
-        private Camera m_Camera;                        // Used for referencing the camera.
+        private UnityEngine.Camera m_Camera;                        // Used for referencing the camera.
         private float m_ZoomSpeed;                      // Reference speed for the smooth damping of the orthographic size.
         private Vector3 m_MoveVelocity;                 // Reference velocity for the smooth damping of the position.
         private Vector3 m_DesiredPosition;              // The position the camera is moving towards.
@@ -19,7 +19,7 @@ namespace Tanks.Complete
 
         private void Awake ()
         {
-            m_Camera = GetComponentInChildren<Camera> ();
+            m_Camera = GetComponentInChildren<UnityEngine.Camera> ();
             
             // plane in which the camera rig is in
             Plane p = new Plane(Vector3.up, transform.position);
