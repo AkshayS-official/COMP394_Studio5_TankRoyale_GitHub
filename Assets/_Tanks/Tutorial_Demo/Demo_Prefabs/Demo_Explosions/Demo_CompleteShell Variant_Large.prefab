@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Demo_CompleteShell Variant_Large
       objectReference: {fileID: 0}
+    - target: {fileID: 192454, guid: 008ecb1b70bec724fa2cd34255b0d8f8, type: 3}
+      propertyPath: m_TagString
+      value: Shell
+      objectReference: {fileID: 0}
     - target: {fileID: 498018, guid: 008ecb1b70bec724fa2cd34255b0d8f8, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
