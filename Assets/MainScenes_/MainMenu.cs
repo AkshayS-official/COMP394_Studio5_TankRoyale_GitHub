@@ -3,10 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public void Menu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+    
     public void PlayGame()
     {
         
-        SceneManager.LoadScene("Main_Scene");
+        SceneManager.LoadScene("Level");
     }
 
     public void OpenSettings()
