@@ -1,11 +1,11 @@
-using System.Collections.Generic;
 using System.Linq;
+using Tanks.Complete;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 
-namespace Tanks.Complete
+namespace _Tanks.Scripts.Tank
 {
     /// <summary>
     /// Handle the tank control when the tank is set to Computer controlled
@@ -75,7 +75,7 @@ namespace Tanks.Complete
 
         // If a GameManager exist, it will call this function after creating a computer controlled tank. This just replace
         // the list of tanks with the one from the GameManager
-        public void Setup(GameManager manager)
+        public void Setup(Tanks.Complete.GameManager manager)
         {
             // If this was using manager.m_SpawnPoints.ToArray(), it will get an array of TankManager, but m_AllTanks is an array of Transform.
             // The Select function will call the function passed as a parameter on each entry in the list (here TankManager) and make a new list

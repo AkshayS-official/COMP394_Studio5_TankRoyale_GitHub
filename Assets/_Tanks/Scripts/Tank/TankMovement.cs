@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using _Tanks.Scripts.Tank;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Users;
 

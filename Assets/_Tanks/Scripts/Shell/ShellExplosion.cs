@@ -41,7 +41,7 @@ namespace Tanks.Complete
                 targetRigidbody.GetComponent<TankMovement>().AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
 
                 // Find the TankHealth script associated with the rigidbody.
-                TankHealth targetHealth = targetRigidbody.GetComponent<TankHealth> ();
+                _Tanks.Scripts.Tank.TankHealth targetHealth = targetRigidbody.GetComponent<_Tanks.Scripts.Tank.TankHealth> ();
 
                 // If there is no TankHealth script attached to the gameobject, go on to the next collider.
                 if (!targetHealth)
