@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Test Scene (Kenry)");
     }
 
     public void OpenSettings()
