@@ -78,7 +78,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2229267103195021085, guid: f7304e3e69d7944849cbc911fbf4a3a2, type: 3}
       propertyPath: m_Name
-      value: Demo_Tank - Heavy Variant Variant
+      value: Brute Tank
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229267103195021085, guid: f7304e3e69d7944849cbc911fbf4a3a2, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2229267103201547433, guid: f7304e3e69d7944849cbc911fbf4a3a2, type: 3}
       propertyPath: m_Enabled
