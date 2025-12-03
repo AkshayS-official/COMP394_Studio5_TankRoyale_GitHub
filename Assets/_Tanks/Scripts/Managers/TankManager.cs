@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.InputSystem.Users;
 using UnityEngine.UIElements;
 
-namespace Tanks.Complete
+namespace _Tanks.Scripts
 {
     [Serializable]
     public class TankManager
@@ -36,7 +36,7 @@ namespace Tanks.Complete
         private TankAI m_AI;                                    // The Tank AI script that let a tank be a bot controlled by the computer
         private InputUser m_InputUser;                          // The Input user link to that tank. Input user identify a single player in the Input system
         
-        public void Setup (GameManager manager)
+        public void Setup (Tanks.Complete.GameManager manager)
         {
             // Get references to the components.
             m_Movement = m_Instance.GetComponent<TankMovement> ();

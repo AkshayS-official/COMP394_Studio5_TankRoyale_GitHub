@@ -5,6 +5,9 @@ namespace _Tanks.Scripts.Tank
 {
     public class TankHealth : MonoBehaviour
     {
+        [Header("Tank Stats")]
+        public TankStats m_TankStats;
+        
         public float m_StartingHealth = 100f;               
         public Slider m_Slider;                             
         public Image m_FillImage;                           
@@ -12,7 +15,7 @@ namespace _Tanks.Scripts.Tank
         public Color m_ZeroHealthColor = Color.red;      
         public GameObject m_ExplosionPrefab;                
         [HideInInspector] public bool m_HasShield;
-        public bool isPlayerTank = false;                   // NEW: Mark if this is the player tank
+        public bool isPlayerTank = false;
         
         
         private AudioSource m_ExplosionAudio;               
@@ -24,6 +27,12 @@ namespace _Tanks.Scripts.Tank
 
         private void Awake ()
         {
+            // Apply stats from ScriptableObject if available
+            if (m_TankStats != null)
+            {
+                m_StartingHealth = m_TankStats.maxHealth;
+            }
+            
             // Instantiate the explosion prefab and get a reference to the particle system on it.
             m_ExplosionParticles = Instantiate (m_ExplosionPrefab).GetComponent<ParticleSystem> ();
 

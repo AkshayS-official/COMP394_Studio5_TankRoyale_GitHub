@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Tanks.Complete;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-namespace Tanks.Complete
+namespace _Tanks.Scripts.Tank
 {
     public class TankShooting : MonoBehaviour
     {
@@ -20,6 +21,8 @@ namespace Tanks.Complete
         public float m_MaxChargeTime = 0.75f;       // How long the shell can charge for before it is fired at max force.
         [Tooltip("The time that must pass before being able to shoot again after a shot")]
         public float m_ShotCooldown = 1.0f;         // The time required between 2 shots
+        [Header("Tank Stats")]
+        public TankStats m_TankStats;
         [Header("Shell Properties")]
         [Tooltip("The amount of health removed to a tank if they are exactly on the landing spot of a shell")]
         public float m_MaxDamage = 100f;                    // The amount of damage done if the explosion is centred on a tank.
@@ -63,6 +66,16 @@ namespace Tanks.Complete
 
         private void Awake()
         {
+            // Apply stats from ScriptableObject if available
+            if (m_TankStats != null)
+            {
+                m_MinLaunchForce = m_TankStats.launchForce * 5f;  // Base value scaled
+                m_MaxLaunchForce = m_TankStats.launchForce * 20f; // Base value scaled
+                m_MaxChargeTime = m_TankStats.maxChargeTime / m_TankStats.attackSpeed;
+                // If you have a damage multiplier field, apply it here
+                // m_DamageMultiplier = m_TankStats.damage;
+            }
+            
             m_InputUser = GetComponent<TankInputUser>();
             if (m_InputUser == null)
                 m_InputUser = gameObject.AddComponent<TankInputUser>();

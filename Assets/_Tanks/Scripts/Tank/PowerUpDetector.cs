@@ -1,4 +1,5 @@
 using System.Collections;
+using _Tanks.Scripts.Tank;
 using UnityEngine;
 
 namespace Tanks.Complete

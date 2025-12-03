@@ -1,3 +1,4 @@
+using _Tanks.Scripts.Tank;
 using UnityEngine;
 
 namespace Tanks.Complete
@@ -7,17 +8,17 @@ namespace Tanks.Complete
     public class ExplosiveBarrel : MonoBehaviour
     {
         [Header("Health")]
-        [Tooltip("Сколько HP у бочки изначально")]
+        [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ HP пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
         public float m_StartingHealth = 30f;
 
         [Header("Explosion Settings")]
-        [Tooltip("Префаб взрыва (частицы + звук), можно взять такой же, как у танка")]
+        [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅпїЅ + пїЅпїЅпїЅпїЅ), пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ, пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ")]
         public GameObject m_ExplosionPrefab;
-        [Tooltip("Максимальный урон, если танк вплотную к бочке")]
+        [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ")]
         public float m_MaxDamage = 80f;
-        [Tooltip("Сила взрывной волны, передаётся в TankMovement.AddExplosionForce")]
+        [Tooltip("пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ TankMovement.AddExplosionForce")]
         public float m_ExplosionForce = 40f;
-        [Tooltip("Радиус взрыва. Дальше этого расстояния урон = 0")]
+        [Tooltip("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ = 0")]
         public float m_ExplosionRadius = 5f;
 
         private float m_CurrentHealth;
@@ -28,8 +29,8 @@ namespace Tanks.Complete
 
         private void Awake()
         {
-            // НИЧЕГО не трогаем в настройках коллайдера и rigidbody,
-            // чтобы они работали как обычный физический объект.
+            // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ rigidbody,
+            // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ.
 
             if (m_ExplosionPrefab != null)
             {
@@ -65,7 +66,7 @@ namespace Tanks.Complete
             }
         }
 
-        // Обычная физическая коллизия (Is Trigger = false у бочки)
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (Is Trigger = false пїЅ пїЅпїЅпїЅпїЅпїЅ)
         private void OnCollisionEnter(Collision collision)
         {
             if (m_Exploded)
@@ -76,7 +77,7 @@ namespace Tanks.Complete
             HandleHit(collision.collider);
         }
 
-        // На всякий случай оставим поддержку триггеров, если что-то ещё триггерное ударит бочку
+        // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         private void OnTriggerEnter(Collider other)
         {
             if (m_Exploded)
@@ -91,7 +92,7 @@ namespace Tanks.Complete
         {
             GameObject otherGO = other.gameObject;
 
-            // 1) Попадание снаряда
+            // 1) пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (otherGO.CompareTag("Shell"))
             {
                 Debug.Log("[Barrel] Hit by Shell -> explode", this);
@@ -99,7 +100,7 @@ namespace Tanks.Complete
                 return;
             }
 
-            // 2) Контакт с танком (TankHealth на родителе)
+            // 2) пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (TankHealth пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
             TankHealth tankHealth = other.GetComponentInParent<TankHealth>();
             if (tankHealth != null)
             {
@@ -129,7 +130,7 @@ namespace Tanks.Complete
                 m_ExplosionAudio.Play();
             }
 
-            // Находим всех в радиусе
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             Collider[] colliders = Physics.OverlapSphere(transform.position, m_ExplosionRadius);
 
             foreach (Collider col in colliders)

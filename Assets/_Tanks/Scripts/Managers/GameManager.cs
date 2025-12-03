@@ -1,5 +1,7 @@
 using System.Collections;
+using _Tanks.Scripts;
 using _Tanks.Scripts.Camera;
+using _Tanks.Scripts.Tank;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;

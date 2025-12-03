@@ -1,6 +1,8 @@
+using _Tanks.Scripts.Tank;
+using Tanks.Complete;
 using UnityEngine;
 
-namespace Tanks.Complete
+namespace _Tanks.Scripts
 {
     public class ShellExplosion : MonoBehaviour
     {
@@ -38,10 +40,10 @@ namespace Tanks.Complete
                     continue;
 
                 // Add an explosion force.
-                targetRigidbody.GetComponent<TankMovement>().AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
+                targetRigidbody.GetComponent<TankMovement>()?.AddExplosionForce(m_ExplosionForce, transform.position, m_ExplosionRadius);
 
                 // Find the TankHealth script associated with the rigidbody.
-                _Tanks.Scripts.Tank.TankHealth targetHealth = targetRigidbody.GetComponent<_Tanks.Scripts.Tank.TankHealth> ();
+                _Tanks.Scripts.Tank.TankHealth targetHealth = targetRigidbody.GetComponent<_Tanks.Scripts.Tank.TankHealth>();
 
                 // If there is no TankHealth script attached to the gameobject, go on to the next collider.
                 if (!targetHealth)
