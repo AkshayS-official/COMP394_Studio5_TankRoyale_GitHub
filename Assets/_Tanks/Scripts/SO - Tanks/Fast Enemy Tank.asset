@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d65fb173c489345a55f08c1a61494d, type: 3}
   m_Name: Fast Enemy Tank
   m_EditorClassIdentifier: Assembly-CSharp::TankStats
-  maxHealth: 75
+  maxHealth: 50
   movementSpeed: 15
-  turnSpeed: 180
+  turnSpeed: 270
   attackSpeed: 1.2
-  damage: 0.8
-  range: 1
+  damage: 0.5
+  range: 2
   launchForce: 1
-  minChargeTime: 0.75
+  minChargeTime: 1
   maxChargeTime: 1.5

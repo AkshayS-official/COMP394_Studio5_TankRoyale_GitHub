@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Player Tank
   m_EditorClassIdentifier: Assembly-CSharp::TankStats
   maxHealth: 100
-  movementSpeed: 12
-  turnSpeed: 180
-  attackSpeed: 1
+  movementSpeed: 16
+  turnSpeed: 210
+  attackSpeed: 5
   damage: 1
-  range: 1
-  launchForce: 1
-  minChargeTime: 0.75
-  maxChargeTime: 1.5
+  range: 10
+  launchForce: 1.5
+  minChargeTime: 0.5
+  maxChargeTime: 5

@@ -19,20 +19,17 @@ namespace _Kenry.Scripts_
             State = newState;
             switch (newState)
             {
-                case GameState.TankSelection:
-                    HandleTankSelection();
-                    break;
                 case GameState.Playing:
                     HandlePlaying();
                     break;
-                case GameState.Paused:
-                    HandlePause();
+                case GameState.TankSelection:
+                    HandleTankSelection();
                     break;
-                case GameState.Win:
-                    HandleWin();
+                case GameState.UpgradeSelection:
+                    HandleTankSelection();
                     break;
-                case GameState.Lose:
-                    HandleLose();
+                case GameState.End:
+                    HandleEnd();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -41,6 +38,11 @@ namespace _Kenry.Scripts_
             OnAfterStateChange?.Invoke(newState);
         
             Debug.Log($"New state: {newState}");
+        }
+        
+        private void HandlePlaying()
+        {
+            
         }
 
         private void HandleTankSelection()
@@ -52,40 +54,27 @@ namespace _Kenry.Scripts_
             ChangeState(GameState.Playing);
         }
 
-        private void HandlePlaying()
+        private void UpgradeSelection()
         {
-        
-            ChangeState(GameState.Paused);
-        }
-    
-        private void HandlePause()
-        {
-            // Handles pausing the game
-        
-            // When the player presses pause again, change the state back to Playing
-            ChangeState(GameState.Playing);
+            ChangeState(GameState.UpgradeSelection);
         }
 
-        private void HandleWin()
+        private void HandleEnd()
         {
-            // Handles winning the game
-        
+            ChangeState(GameState.End);
         }
     
-        private void HandleLose()
-        {
-            // Handles losing the game
         
-        }
+
+        
     }
 
     [SerializeField]
     public enum GameState
     {
-        TankSelection,
         Playing,
-        Paused,
-        Win,
-        Lose
+        TankSelection,
+        UpgradeSelection,
+        End
     }
 }

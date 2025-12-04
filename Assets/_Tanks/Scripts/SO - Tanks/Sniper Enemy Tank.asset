@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d65fb173c489345a55f08c1a61494d, type: 3}
   m_Name: Sniper Enemy Tank
   m_EditorClassIdentifier: Assembly-CSharp::TankStats
-  maxHealth: 80
+  maxHealth: 75
   movementSpeed: 10
   turnSpeed: 180
-  attackSpeed: 1.5
+  attackSpeed: 1
   damage: 1.3
-  range: 1
-  launchForce: 1
-  minChargeTime: 0.75
-  maxChargeTime: 1.5
+  range: 10
+  launchForce: 2
+  minChargeTime: 3
+  maxChargeTime: 10

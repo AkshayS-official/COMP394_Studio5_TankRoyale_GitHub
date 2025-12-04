@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc25b6c35f0ec7f43ad6f047f3623ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Tanks.Scripts.Tank.TankAI
+  behavior: 1
   enemyTags:
   - Green
   - Purple

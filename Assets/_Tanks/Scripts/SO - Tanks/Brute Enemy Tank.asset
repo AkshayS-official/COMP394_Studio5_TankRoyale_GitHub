@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TankStats
   maxHealth: 150
   movementSpeed: 8
-  turnSpeed: 180
-  attackSpeed: 0.7
+  turnSpeed: 120
+  attackSpeed: 1
   damage: 1.5
-  range: 1
-  launchForce: 1
-  minChargeTime: 0.75
-  maxChargeTime: 1.5
+  range: 10
+  launchForce: 1.5
+  minChargeTime: 2
+  maxChargeTime: 10

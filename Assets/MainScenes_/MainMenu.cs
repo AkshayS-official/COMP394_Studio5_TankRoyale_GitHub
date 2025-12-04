@@ -34,6 +34,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("SettingsScene");
     }
 
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void QuitGame()
     {
         Debug.Log("Game Quit!");
