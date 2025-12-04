@@ -46,6 +46,8 @@ namespace _Tanks.Scripts.Tank
 
         private State m_CurrentState = State.Seek;      // The current AI state the Tank is in.
 
+        public string[] enemyTags;
+        
         private void Awake()
         {
             //Awake is still called on disabled component. So that the user can test disabling AI on a single tank
@@ -142,6 +144,18 @@ namespace _Tanks.Scripts.Tank
                     // this is a destroyed or deactivated tank, this is not a valid target
                     if(tank == null || !tank.activeInHierarchy)
                         continue;
+                    
+                    // Only chase prefabs with the correct tag
+                    bool hostile = false;
+                    for (int e = 0; e < enemyTags.Length; e++)
+                    {
+                        if (tank.CompareTag(enemyTags[e]))
+                        {
+                            hostile = true;
+                            break;
+                        }
+                    }
+                    if (!hostile) continue;
 
                     paths[i] = new NavMeshPath();
 

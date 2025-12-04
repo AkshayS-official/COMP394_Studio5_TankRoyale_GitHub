@@ -1,8 +1,8 @@
 using System.Collections;
-using _Tanks.Scripts.Tank;
+using Tanks.Complete;
 using UnityEngine;
 
-namespace Tanks.Complete
+namespace _Tanks.Scripts.Tank
 {
     public class PowerUpDetector : MonoBehaviour
     {
@@ -34,7 +34,7 @@ namespace Tanks.Complete
         {
             // Apply the speed boost
             m_HasActivePowerUp = true;
-            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUpType.Speed, duration);
+            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUp.PowerUpType.Speed, duration);
             m_TankMovement.m_Speed += speedBoost;
             m_TankMovement.m_TurnSpeed += TurnSpeedBoost;
             // Wait for the duration of the power up
@@ -58,7 +58,7 @@ namespace Tanks.Complete
             if(cooldownReduction > 0)
             {
                 m_HasActivePowerUp = true;
-                m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUpType.ShootingBonus, duration);
+                m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUp.PowerUpType.ShootingBonus, duration);
                 m_TankShooting.m_ShotCooldown *= cooldownReduction;
                 // Wait for the duration of the power up
                 yield return new WaitForSeconds(duration);
@@ -80,7 +80,7 @@ namespace Tanks.Complete
         {
             // Activate the shield
             m_HasActivePowerUp = true;
-            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUpType.DamageReduction, duration);
+            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUp.PowerUpType.DamageReduction, duration);
             m_TankHealth.ToggleShield(shieldAmount);
             // Wait for the duration of the power up
             yield return new WaitForSeconds(duration);
@@ -93,7 +93,7 @@ namespace Tanks.Complete
         public void PowerUpHealing(float healAmount)
         {
             m_TankHealth.IncreaseHealth(healAmount);
-            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUpType.Healing, 1.0f);
+            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUp.PowerUpType.Healing, 1.0f);
         }
 
         // Makes the tank invulnerable for an amount of time
@@ -105,7 +105,7 @@ namespace Tanks.Complete
         private IEnumerator ActivateInvincibility(float duration)
         {
             m_HasActivePowerUp = true;
-            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUpType.Invincibility, duration);
+            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUp.PowerUpType.Invincibility, duration);
             m_TankHealth.ToggleInvincibility();
             yield return new WaitForSeconds(duration);
             m_HasActivePowerUp = false;
@@ -116,7 +116,7 @@ namespace Tanks.Complete
         public void PowerUpSpecialShell(float damageMultiplier)
         {
             m_HasActivePowerUp = true;
-            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUpType.DamageMultiplier, 0f);
+            m_PowerUpHUD.SetActivePowerUp(PowerUp.PowerUp.PowerUpType.DamageMultiplier, 0f);
             m_TankShooting.EquipSpecialShell(damageMultiplier);
         }
     }

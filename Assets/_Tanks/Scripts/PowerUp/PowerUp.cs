@@ -1,6 +1,8 @@
+using _Tanks.Scripts.Tank;
+using Tanks.Complete;
 using UnityEngine;
 
-namespace Tanks.Complete
+namespace _Tanks.Scripts.PowerUp
 {
     public class PowerUp : MonoBehaviour
     {

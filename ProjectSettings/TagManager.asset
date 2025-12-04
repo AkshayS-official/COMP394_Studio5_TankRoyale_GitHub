@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Shell
   - Enemy
+  - Red
+  - Yellow
+  - Green
+  - Purple
   layers:
   - Default
   - TransparentFX

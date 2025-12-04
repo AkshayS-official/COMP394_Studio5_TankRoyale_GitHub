@@ -1,8 +1,9 @@
+using _Tanks.Scripts.PowerUp;
 using UnityEditor;
 
 namespace Tanks.Complete
 {
-    [CustomEditor(typeof(Complete.PowerUp))]
+    [CustomEditor(typeof(PowerUp))]
     public class PowerUpEditor : Editor
     {
         SerializedProperty powerUpType;

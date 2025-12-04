@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2970235072195656073
+--- !u!1001 &2056679732290404508
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3770534626724637743, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3eced6aa85fa6064599369b635880d63, type: 2}
     - target: {fileID: 7273797243857670557, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -34,15 +38,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273797243869331245, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.384567
+      value: 6.0143733
       objectReference: {fileID: 0}
     - target: {fileID: 7273797243869331245, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000019073486
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7273797243869331245, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.400068
+      value: -25.848343
       objectReference: {fileID: 0}
     - target: {fileID: 7273797243869331245, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -78,11 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7273797243869566079, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       propertyPath: m_Name
-      value: Fast Tank
+      value: Yellow Fast Tank
       objectReference: {fileID: 0}
     - target: {fileID: 7273797243869566079, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 7273797243879194571, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       propertyPath: m_TankStats
@@ -96,28 +100,36 @@ PrefabInstance:
       propertyPath: m_TankStats
       value: 
       objectReference: {fileID: 11400000, guid: c85626ee6a8b9d140920a90a992f832c, type: 2}
+    - target: {fileID: 7966136018860143100, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3eced6aa85fa6064599369b635880d63, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7273797243869566079, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9076634375215920661}
+      addedObject: {fileID: 8364360659530635497}
   m_SourcePrefab: {fileID: 100100000, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
---- !u!1 &5605254210568285686 stripped
+--- !u!1 &8681659561815692515 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7273797243869566079, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
-  m_PrefabInstance: {fileID: 2970235072195656073}
+  m_PrefabInstance: {fileID: 2056679732290404508}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9076634375215920661
+--- !u!114 &8364360659530635497
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5605254210568285686}
+  m_GameObject: {fileID: 8681659561815692515}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc25b6c35f0ec7f43ad6f047f3623ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Tanks.Scripts.Tank.TankAI
+  enemyTags:
+  - Green
+  - Red
+  - Purple
