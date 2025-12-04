@@ -1252,7 +1252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WASD For movemenr
+  m_text: WASD For movement
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5be85c2806baf494cb6352f95c6abaa3, type: 2}
   m_sharedMaterial: {fileID: -5892734616304139118, guid: 5be85c2806baf494cb6352f95c6abaa3, type: 2}
