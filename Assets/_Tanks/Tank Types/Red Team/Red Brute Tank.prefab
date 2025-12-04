@@ -96,6 +96,14 @@ PrefabInstance:
       propertyPath: m_TankStats
       value: 
       objectReference: {fileID: 11400000, guid: 07359119d22cc7e40b75e77b198db5eb, type: 2}
+    - target: {fileID: 2229267103201547433, guid: f7304e3e69d7944849cbc911fbf4a3a2, type: 3}
+      propertyPath: m_MaxChargeTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229267103201547433, guid: f7304e3e69d7944849cbc911fbf4a3a2, type: 3}
+      propertyPath: m_ExplosionRadius
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2229267103201558903, guid: f7304e3e69d7944849cbc911fbf4a3a2, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -112,6 +120,10 @@ PrefabInstance:
       propertyPath: m_IsComputerControlled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2229267103201571127, guid: f7304e3e69d7944849cbc911fbf4a3a2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 427261503, guid: 48fcaefda3f60410aac1f3b904885b45, type: 3}
     - target: {fileID: 2229267103201594717, guid: f7304e3e69d7944849cbc911fbf4a3a2, type: 3}
       propertyPath: m_Enabled
       value: 1

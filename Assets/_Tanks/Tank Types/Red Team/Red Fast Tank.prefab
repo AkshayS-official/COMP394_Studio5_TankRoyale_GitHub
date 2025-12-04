@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_TankStats
       value: 
       objectReference: {fileID: 11400000, guid: c85626ee6a8b9d140920a90a992f832c, type: 2}
+    - target: {fileID: 7273797243879266901, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 427261503, guid: 48fcaefda3f60410aac1f3b904885b45, type: 3}
     - target: {fileID: 7273797243879270933, guid: e8a208e9857544b0292cc3d24b0106b6, type: 3}
       propertyPath: m_TankStats
       value: 

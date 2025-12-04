@@ -1,88 +1,91 @@
 using System;
 using UnityEngine;
 
-public class GameManager : Singleton<GameManager>
+namespace _Kenry.Scripts_
 {
-    public static event Action<GameState> OnBeforeStateChange;
-    public static event Action<GameState> OnAfterStateChange;
-    
-    public GameState State { get; private set; }
-
-    void Start() => ChangeState(GameState.TankSelection);
-
-    public void ChangeState(GameState newState)
+    public class GameManager : Singleton<GameManager>
     {
-        OnBeforeStateChange?.Invoke(newState);
-        
-        State = newState;
-        switch (newState)
+        public static event Action<GameState> OnBeforeStateChange;
+        public static event Action<GameState> OnAfterStateChange;
+    
+        public GameState State { get; private set; }
+
+        void Start() => ChangeState(GameState.TankSelection);
+
+        public void ChangeState(GameState newState)
         {
-            case GameState.TankSelection:
-                HandleTankSelection();
-                break;
-            case GameState.Playing:
-                HandlePlaying();
-                break;
-            case GameState.Paused:
-                HandlePause();
-                break;
-            case GameState.Win:
-                HandleWin();
-                break;
-            case GameState.Lose:
-                HandleLose();
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+            OnBeforeStateChange?.Invoke(newState);
+        
+            State = newState;
+            switch (newState)
+            {
+                case GameState.TankSelection:
+                    HandleTankSelection();
+                    break;
+                case GameState.Playing:
+                    HandlePlaying();
+                    break;
+                case GameState.Paused:
+                    HandlePause();
+                    break;
+                case GameState.Win:
+                    HandleWin();
+                    break;
+                case GameState.Lose:
+                    HandleLose();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
+            }
+        
+            OnAfterStateChange?.Invoke(newState);
+        
+            Debug.Log($"New state: {newState}");
         }
-        
-        OnAfterStateChange?.Invoke(newState);
-        
-        Debug.Log($"New state: {newState}");
-    }
 
-    private void HandleTankSelection()
-    {
-        // Handles the tank selection screen
+        private void HandleTankSelection()
+        {
+            // Handles the tank selection screen
         
         
-        // When the player selects a tank, change the state to Playing
-        ChangeState(GameState.Playing);
-    }
+            // When the player selects a tank, change the state to Playing
+            ChangeState(GameState.Playing);
+        }
 
-    private void HandlePlaying()
-    {
+        private void HandlePlaying()
+        {
         
-        ChangeState(GameState.Paused);
-    }
+            ChangeState(GameState.Paused);
+        }
     
-    private void HandlePause()
-    {
-        // Handles pausing the game
+        private void HandlePause()
+        {
+            // Handles pausing the game
         
-        // When the player presses pause again, change the state back to Playing
-        ChangeState(GameState.Playing);
-    }
+            // When the player presses pause again, change the state back to Playing
+            ChangeState(GameState.Playing);
+        }
 
-    private void HandleWin()
-    {
-        // Handles winning the game
+        private void HandleWin()
+        {
+            // Handles winning the game
         
-    }
+        }
     
-    private void HandleLose()
-    {
-        // Handles losing the game
+        private void HandleLose()
+        {
+            // Handles losing the game
         
+        }
     }
-}
 
-[SerializeField]
-public enum GameState
-{
-    TankSelection,
-    Playing,
-    Paused,
-    Win,
-    Lose
+    [SerializeField]
+    public enum GameState
+    {
+        TankSelection,
+        Playing,
+        Paused,
+        Win,
+        Lose
+    }
 }
