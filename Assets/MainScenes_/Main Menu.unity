@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 657608675}
   - component: {fileID: 657608674}
   m_Layer: 5
-  m_Name: Button - Settings
+  m_Name: Button - TipsIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1491263159}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: OpenSettings
+        m_MethodName: TipsIn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1321095942, guid: 39e15f374eb319345b4986ca7ead8af9, type: 3}
+  m_Sprite: {fileID: -464103123, guid: 39e15f374eb319345b4986ca7ead8af9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

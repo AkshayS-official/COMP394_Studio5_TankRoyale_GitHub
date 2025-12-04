@@ -7,7 +7,17 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
-    
+
+    public void TipsIn()
+    {
+        SceneManager.LoadScene("Tips");
+    }
+
+    public void TipsOut()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
     public void PlayGame()
     {
         

@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MainScenes_/Test Scene (Kenry).unity
     guid: 0d80d669ff5d12f4e88bf754b922be0e
+  - enabled: 1
+    path: Assets/MainScenes_/Tips.unity
+    guid: de821478582c0dc40867e03b471daa10
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 7fb6c1c790fa04865b379a6e8ccd7e9c, type: 3}
   m_UseUCBPForAssetBundles: 0
