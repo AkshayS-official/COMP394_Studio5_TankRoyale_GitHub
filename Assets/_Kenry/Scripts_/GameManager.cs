@@ -9,8 +9,11 @@ namespace _Kenry.Scripts_
         public static event Action<GameState> OnAfterStateChange;
     
         public GameState State { get; private set; }
+        
+        
+        [SerializeField] private GameObject playerPrefab;
 
-        void Start() => ChangeState(GameState.TankSelection);
+        void Start() => ChangeState(GameState.Playing);
 
         public void ChangeState(GameState newState)
         {
@@ -42,25 +45,28 @@ namespace _Kenry.Scripts_
         
         private void HandlePlaying()
         {
+            Time.timeScale = 1f;
+            
+            if (playerPrefab != null)
+            {
+                playerPrefab.SetActive(true);
+            }
             
         }
 
         private void HandleTankSelection()
         {
-            // Handles the tank selection screen
-        
-        
-            // When the player selects a tank, change the state to Playing
-            ChangeState(GameState.Playing);
+            Time.timeScale = 0f;
         }
 
         private void UpgradeSelection()
         {
-            ChangeState(GameState.UpgradeSelection);
+            Time.timeScale = 0f;
         }
 
         private void HandleEnd()
         {
+            Time.timeScale = 0f;
             ChangeState(GameState.End);
         }
     

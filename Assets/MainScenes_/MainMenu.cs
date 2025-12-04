@@ -1,47 +1,44 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+namespace MainScenes_
 {
-    void Awake()
+    public class MainMenu : MonoBehaviour
     {
-        DontDestroyOnLoad(this.gameObject);
-    }
-    public void Menu()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
+        void Awake()
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+        public void Menu()
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
 
-    public void TipsIn()
-    {
-        SceneManager.LoadScene("Tips");
-    }
+        public void TipsIn()
+        {
+            SceneManager.LoadScene("Tips");
+        }
 
-    public void TipsOut()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
+        public void TipsOut()
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
 
-    public void PlayGame()
-    {
+        public void PlayGame()
+        {
         
-        SceneManager.LoadScene("Test Scene (Kenry)");
-    }
+            SceneManager.LoadScene("Test Scene (Kenry)");
+        }
+        
+        public void RestartGame()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
-    public void OpenSettings()
-    {
-        // Load your settings scene OR open a UI panel
-        SceneManager.LoadScene("SettingsScene");
-    }
-
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void QuitGame()
-    {
-        Debug.Log("Game Quit!");
-        Application.Quit();
+        public void QuitGame()
+        {
+            Debug.Log("Game Quit!");
+            Application.Quit();
+        }
     }
 }
